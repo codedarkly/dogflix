@@ -1,0 +1,228 @@
+/*
+
+font-family: roc-grotesk, sans-serif;
+--primary-header-text : 700 15em livermore-script-atf-rough-2, sans-serif;
+--primary-header-text : 700 15em roc-grotesk, sans-serif;
+900 3em 'Lilita One', sans-serif;
+*/
+
+/* Global */
+
+* {
+padding: 0;
+margin: 0;
+}
+
+html {
+box-sizing: border-box;
+}
+
+body {
+background: #0E0E0E;
+}
+
+:root {
+--primary-header-text: 500 2em "Lilita One", serif;
+--secondary-header-text: 900 1.3em "Lato", serif;
+--primary-body-text: 500 1.4em "Lilita One", serif;
+--secondary-body-text: 400 0.9em "Lato", serif;
+--button-text: 900 0.9em "Lato", serif;
+--menu-text: 500 1em "Lilita One", serif;
+}
+
+
+header {
+width: 100%;
+height: auto;
+}
+
+header h1 {
+font: var(--primary-header-text);
+color: #fafafa;
+}
+
+header img {
+width: 96px;
+height: 96px;
+}
+
+header nav {
+width: 100%;
+height: 40px;
+padding-top: 15px;
+background: linear-gradient(to right, #89FBC8, #E0257A, #BD0157);
+}
+
+header nav ul {
+margin: 0 auto;
+text-align: center;
+}
+
+nav menu {
+width: 15%;
+text-align: center;
+position: absolute;
+top: 15px;
+right: 0;
+}
+
+nav ul li, nav menu li  {
+display: inline;
+list-style-type: none;
+padding-right: 25px;
+}
+
+nav menu li  {
+background: #fafafa;
+padding: 8px 18px ;
+border-radius: 15px;
+}
+
+nav menu li a  {
+color: #BD0157;
+text-decoration: none;
+font: var(--menu-text);
+}
+
+nav ul li a  {
+color: #fafafa;
+text-decoration: none;
+font: 400 1em "Lato", serif;
+}
+
+.logo {
+width: 108px;
+padding: 25px 0;
+margin: 0 auto;
+}
+
+/********/
+
+
+/* Doggies */
+
+
+.card {
+ margin: 5% auto;
+ border: 1px solid rgba(200,200,200,0.2);
+ border-radius: 50px;
+ width: 420px;
+ height: 620px;
+ padding: 5% 3% 3% 3%;
+}
+
+.card img {
+margin: 0 auto;
+width: 385px;
+height: 510px;
+display: block;
+border-radius: 50px;
+cursor: pointer;
+}
+
+.item-detail  {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+margin: 25px 0 25px 25px;
+width: 90%;
+}
+
+.item h4 {
+font: var(--primary-body-text);
+color: #BD0157;
+margin-bottom: 5px;
+cursor: pointer;
+}
+
+.item h4 a {
+font: 900 1.3em "Lato", serif;
+color: #BD0157;
+text-decoration: none;
+}
+
+.item p {
+font: var(--secondary-body-text);
+color: #fafafa;
+}
+
+.item menu li {
+display: inline;
+list-style-type: none;
+padding-right: 10px;
+color: #fafafa;
+}
+
+.item li i {
+color: #BD0157;
+}
+
+.profile-button {
+font: var(--menu-text);
+color: #BD0157;
+border: 2px solid #BD0157;
+border-radius: 15px;
+width: 145px;
+height: 30px;
+text-align: center;
+padding-top: 10px;
+cursor: pointer;
+float: right;
+margin-right: 25px;
+}
+
+
+/********/
+
+
+
+
+/* Doggy profile */
+
+#overlay {
+
+}
+
+
+/********/
+
+
+
+
+/* Doggies */
+
+
+
+/********/
+
+
+@media(max-width: 3000px) {
+  .container {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  .card {
+   width: 440px;
+   height: 680px !important;
+  }
+
+  .card img {
+  width: 385px;
+  height: 510px;
+  }
+}
+
+
+@media(max-width: 1000px) {
+    .container {
+      width: 85%;
+    }
+
+  .card {
+   margin: 85px 0 !important;
+   padding: 12% 5% 5% 5% !important;
+  }
+
+}

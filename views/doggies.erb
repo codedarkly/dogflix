@@ -1,0 +1,21 @@
+<div class="container">
+    <% @doggies.each do | doggy | %>
+        <div class="card">
+            <img src="<%= doggy.image %>" alt="Image of dog <%= doggy.name %>">
+            <div class="item-detail">
+              <div class="item">
+                <h4 data-detail="<%= doggy.doggy_id %>"><%= doggy.name %></h4>
+                <p><%= doggy.breed %></p>
+              </div>
+              <div class="item">
+                 <menu>
+                   <li>0&nbsp;<i class="fa-solid fa-heart"></i></li>
+                   <li>0&nbsp;<i class="fa-solid fa-comment"></i></li>
+                 </menu>
+              </div>
+           </div>
+        <div class="profile-button" data-detail="<%= doggy.doggy_id %>"><i class="fa-solid fa-paw"></i>&nbsp;View profile</div>
+      </div>
+    <% end %>
+</div>
+<script src="/js/profile.js"></script>

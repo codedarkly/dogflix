@@ -1,9 +1,21 @@
 require 'sinatra'
+require 'sinatra/activerecord'
+require 'dotenv'
+require 'pony'
+require 'redis'
+require 'pg'
 
-class DogflixApp < Sinatra::Base
+
+
+Dotenv.load
+Dir[File.join(File.dirname(__FILE__), 'models', '*.rb')].each { |model| require model}
+
+
+class DogFlixApp < Sinatra::Base
 
   get '/' do
     #redirect to signup
+    'hello'
   end
 
   get '/signup' do
@@ -50,12 +62,23 @@ class DogflixApp < Sinatra::Base
     #cache in redis
   end
 
+  get '/setup/add/schedule' do
+    #add play date schedule
+  end
+
+  post '/setup/add/schedule' do
+    #save everything to db
+  end
+
   get '/welcome' do
     #take user on a tour through the app(this is only when you register)
   end
 
   get '/doggies' do
      #this is the doggy feed
+     dog = Dog.new
+     @doggies = dog.get_all_dogs
+     erb :doggies
   end
 
   get '/doggy/:id' do
@@ -109,6 +132,23 @@ class DogflixApp < Sinatra::Base
   post '/settings' do
     #reminders, deactivate account etc
   end
+
+  get '/messages' do
+
+  end
+
+  post '/messages' do
+
+  end
+
+  get '/message' do
+
+  end
+
+  post '/messages' do
+
+  end
+
 
   run!
 end

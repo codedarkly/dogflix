@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
-
 gem 'sinatra'
 gem 'pg'
-gem 'activerecord'
-gem 'sinatra-activerecord'
+gem 'rake'
+gem 'sinatra-activerecord', '~> 2.0', '>= 2.0.18'
+gem 'activerecord', '~> 4.0', '>= 4.1'
 gem 'redis'
 gem 'dotenv'
 gem 'jwt'
