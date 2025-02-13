@@ -76,14 +76,39 @@ class DogFlixApp < Sinatra::Base
 
   get '/doggies' do
      #this is the doggy feed
-     dog = Dog.new
-     @doggies = dog.get_all_dogs
+     doggy = Doggy.new
+     @doggies = doggy.get_all_dogs
+     #@result = DogParent.includes({:doggies => [:galleries]}).find(1)
      erb :doggies
   end
 
   get '/doggy/:id' do
     #get doggies profile
+    content_type :json
+    doggies = []
+    dog_parent = DogParent.includes({:doggies => [:galleries]}).find(params[:id])
+    dog_parent.doggies.each do |doggy|
+      doggies << {
+        name: doggy.name,
+        breed: doggy.breed,
+        age: doggy.doggy_age,
+        gender: doggy.gender,
+        image: doggy.image,
+        bio: doggy.bio
+      }
+    end
+    doggies.to_json
+    @result = {owner: dog_parent, doggies: doggies}.to_json
   end
+
+  get '/api/doggy/:parent_id' do
+    #get doggies profile
+    content_type :json
+    dog = Dog.new
+    #user = User.find()
+    #@result = dog.get_dog(params[:id]).to_json
+  end
+
 
   get '/doggy/parent/:id' do
     #get doggy parents profile
